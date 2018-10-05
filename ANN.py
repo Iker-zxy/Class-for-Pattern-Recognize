@@ -106,23 +106,24 @@ plt.figure()
 time = np.linspace(1990,2009,20)
 time1 = np.linspace(1990,2004,15)  # 训练数据时间
 time2 = np.linspace(2005,2009,5)   # 测试数据时间
+
 #绘值公路客运量对比图；
 plt.subplot(2,1,1)
+plt.title(u'神经网络客运量与货运量训练和测试对比图')
 plt.xticks(np.arange(1990, 2010, 2))
-plt.plot(time,glkyl,'b--+',label=u'实际货运量')
-plt.plot(time1,newk_train,'r--o',label=u'训练网络输出货运量') 
-plt.plot(time2,newk_test,'g--o',label=u'测试网络输出货运量')
+plt.plot(time,glkyl,'b--+',label=u'实际客运量')
+plt.plot(time1,newk_train,'r--o',label=u'训练网络输出客运量') 
+plt.plot(time2,newk_test,'g--o',label=u'测试网络输出客运量')
 plt.legend(loc='upper left')
 plt.xlabel(u'年份')
 plt.ylabel(u'客运量/万人')
 #绘制公路货运量对比图；
 plt.subplot(2,1,2)
 plt.xticks(np.arange(1990, 2010, 2))
-plt.plot(time,glhyl,'b--+',label=u'实际客运量')
-plt.plot(time1,newh_train,'r--o',label=u'网络输出客运量')   
+plt.plot(time,glhyl,'b--+',label=u'实际货运量')
+plt.plot(time1,newh_train,'r--o',label=u'网络输出货运量')   
 plt.plot(time2,newh_test,'g--o',label=u'测试网络输出货运量')
 plt.legend(loc='upper left')
-plt.xlabel(u'年份')
 plt.ylabel(u'货运量/万吨')
 plt.show()
 
